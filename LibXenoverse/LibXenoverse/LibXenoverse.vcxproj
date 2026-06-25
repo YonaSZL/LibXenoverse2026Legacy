@@ -41,12 +41,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)\lib\$(Configuration)\</OutDir>
     <ExecutablePath>$(ExecutablePath)</ExecutablePath>
-    <IncludePath>$(DXSDK_DIR)\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(DXSDK_DIR)\lib\x86;$(LibraryPath)</LibraryPath>
+<IncludePath>..\..\depends\directX\include;$(IncludePath)</IncludePath>
+<LibraryPath>..\..\depends\directX\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(DXSDK_DIR)\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(DXSDK_DIR)\lib\x86;$(LibraryPath)</LibraryPath>
+<IncludePath>..\..\depends\directX\include;$(IncludePath)</IncludePath>
+<LibraryPath>..\..\depends\directX\lib;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)\lib\$(Configuration)\</OutDir>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
@@ -55,16 +55,19 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../../depends/fbxsdk/include;../../depends/zlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>LIBXENOVERSE_FBX_SUPPORT;LIBXENOVERSE_ZLIB_SUPPORT;LIBXENOVERSE_WINSDK_SUPPORT;LIBXENOVERSE_DEBUGGING_LOG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../depends/fbxsdk/include;../../depends/directX/include;../../depends/zlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+<PreprocessorDefinitions>
+POINTER_64=__ptr64;LIBXENOVERSE_FBX_SUPPORT;LIBXENOVERSE_ZLIB_SUPPORT;LIBXENOVERSE_WINSDK_SUPPORT;LIBXENOVERSE_DEBUGGING_LOG;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0601;NTDDI_VERSION=0x06010000;%(PreprocessorDefinitions)
+</PreprocessorDefinitions>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
+      <ShowIncludes>true</ShowIncludes>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>d3dcompiler.lib;D3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d3dcompiler.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -74,7 +77,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>LIBXENOVERSE_FBX_SUPPORT;LIBXENOVERSE_ZLIB_SUPPORT;LIBXENOVERSE_WINSDK_SUPPORT;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+<PreprocessorDefinitions>
+POINTER_64=__ptr64;LIBXENOVERSE_FBX_SUPPORT;LIBXENOVERSE_ZLIB_SUPPORT;LIBXENOVERSE_WINSDK_SUPPORT;LIBXENOVERSE_DEBUGGING_LOG;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0601;NTDDI_VERSION=0x06010000;%(PreprocessorDefinitions)
+</PreprocessorDefinitions>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <AdditionalIncludeDirectories>../../depends/fbxsdk/include;../../depends/zlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
@@ -85,7 +90,7 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <AdditionalDependencies>d3dcompiler.lib;D3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d3dcompiler.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
