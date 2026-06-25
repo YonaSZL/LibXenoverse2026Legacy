@@ -1,4 +1,10 @@
-# LibXenoverse
+# Legacy 2026
+
+Found this project for a friend. Had to look for legacy files and modify the conf to make it build in VS2013.
+I was looking to make the emd to fbx tool works, the others are not tested.
+Once you get the .fbx model, you can import it into Blender and visualize.
+
+## LibXenoverse (Old readme)
 Dragon Ball Xenoverse Modding Tools and Library.
 
 Simple library to handle Dragon Ball Xenoverse's file formats. Supports both little endian (PC) and big endian (Xbox 360) files.
